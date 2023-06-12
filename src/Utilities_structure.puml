@@ -1,0 +1,287 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "Utilities",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1116154134 { 
+   	label=Utilities
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Utilities1116154134[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(I)Utilities</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ calculateExpectedPrice(karat: int, weight: int, profitPercentage: int): Integer</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkStock(Quantity: int): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ resetTable(table: JTable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ typeDecider(ID: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateTableList(table: JTable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#F1E5FD"
+];
+} 
+
+subgraph cluster_1563253546 { 
+   	label=Configuration
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Configuration1563253546[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Configuration</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ configDB(): Connection</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2046749032 { 
+   	label=Dialog
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Dialog2046749032[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Dialog</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ GenerateID(typeName: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ calculateExpectedPrice(karat: int, weight: int, profitPercentage: int): Integer</TD></TR>
+<TR><TD ALIGN="LEFT" >+ calculatorDialog()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkStock(Quantity: int): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ inputType()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ resetTable(table: JTable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ searchType()</TD></TR>
+<TR><TD ALIGN="LEFT" >- soldListIDFilter(ID: String, soldPrice: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ soldType()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ typeDecider(ID: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateTableList(tablePane: JTable)</TD></TR>
+<TR><TD ALIGN="LEFT" >- updateTableListIDFilter(ID: String, tablePane: JTable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_956107380 { 
+   	label=Dashboard
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Dashboard956107380[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Dashboard</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   RemainingstocksLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   Sidebar: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   addJewelriesButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   addListButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   allTimePerformanceLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bracelet: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   braceletCheckBox: JCheckBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   buyJewelriesButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   calculatorButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   cardLayout: CardLayout [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   earnedLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   earnedNumberLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   earring: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   earringCheckBox: JCheckBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   filterButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   filteringLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   happyMasGraph: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   happyMasTitle: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   homeButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   homePanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   incomeStatementInsidePanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   incomeStatementLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   incomeStatementPanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   incomeStatementTable: JTable [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jLabel11: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jScrollPane1: JScrollPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jScrollPane2: JScrollPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jScrollPane3: JScrollPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jSplitPane1: JSplitPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   jewelryListLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   listButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   listPanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   logoSM: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   logoutButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mainPanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   monthLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   moreButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   necklace: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   necklaceCheckBox: JCheckBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   pendant: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   pendantCheckBox: JCheckBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   percentageLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   profitBox: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   profitBox1: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   profitBox2: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   profitButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   profitGraphLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   profitGraphPanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   profitLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   purchasedJewelriesDataLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   purchasedJewelriesDataTable: JTable [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   purchasesAndSalesButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   purchasesAndSalesButton1: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   purchasesAndSalesPanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   quickAccessLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   quickAccessPanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   removeListButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   removePurchasedDataButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   removeSoldJewelriesDataButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   revenueButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   ring: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   ringCheckBox: JCheckBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   roundBottomLeft: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   roundBottomRight: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   roundTopLeft: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   roundTopRight: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   scrollPaneTable: JScrollPane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   searchISButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   searchJewelriesButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   searchListButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   sellJewelriesButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   settingsButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   soldJewelriesButton: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   soldJewelriesDataLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   soldJewelriesDataTable: JTable [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   soldJewelriesLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   subtitlePerformances: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   tablePane: JTable [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   titleDashboard: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   totalLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   totalNumberLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   totalWeightLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   totalWeightNumberLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   upperPanel: JPanel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   weightLabel: JLabel [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addTableList()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ calculateExpectedPrice(karat: int, weight: int, profitPercentage: int): Integer</TD></TR>
+<TR><TD ALIGN="LEFT" >- checkAllBuyPriceProfit(): Object</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkAllProfit(buyPriceTotal: Object, soldPriceTotal: Object): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkAllProfitPercentage(totalProfit: int, totalInitialPriceProfit: Object): Integer</TD></TR>
+<TR><TD ALIGN="LEFT" >- checkAllSoldPriceProfit(): Object</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkProfit(initialPrice: int, soldPrice: int): Integer</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkRemainingStock(): Object</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkSoldJewelriesTotalQuantity(): Object</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkSoldJewelriesTotalSoldPrice(): Object</TD></TR>
+<TR><TD ALIGN="LEFT" >+ checkStock(quantity: int): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ incomeStatementList(table: JTable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initComponents()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+<TR><TD ALIGN="LEFT" >+ resetTable(table: JTable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ typeDecider(ID: String): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateTableList(tablePane: JTable)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateTableListWithFilter(bracelet: boolean, earring: boolean, necklace: boolean, ring: boolean, pendant: boolean)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateTablePurchasedList()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateTableSalesList()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Utilities1116154134 -> Dashboard956107380[arrowhead=none, arrowtail=empty, dir=both];
+Utilities1116154134 -> Dialog2046749032[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
